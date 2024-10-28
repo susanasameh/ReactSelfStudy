@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './style.css';
 import App from './App';
-import TestApp from './TestApp';
+import Header from './Header';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <App/>
-  
+  <div>
+    <App />
+    <Header/>
+  </div>
 );
-root.render(<TestApp/>)
+
 
 
 //like the above method but another syntax
