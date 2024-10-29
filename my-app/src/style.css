@@ -1,0 +1,28 @@
+#meData{
+    display: flex;
+    flex-direction: row;
+}
+#meDataContent{
+    height: 7%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.reactlogo{
+    height: 7%;
+    width: 7%;
+    border-radius: 50%;
+    margin: 1%;
+}
+
+#navUl{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
