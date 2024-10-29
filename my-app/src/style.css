@@ -1,3 +1,8 @@
+#headerNav{
+    border: 1px #5094fa6c solid;
+    border-radius: 5px;
+    background-color: #5094fa6c;
+}
 #meData{
     display: flex;
     flex-direction: row;
@@ -19,10 +24,10 @@
 #navUl{
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
