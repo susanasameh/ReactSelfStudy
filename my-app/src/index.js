@@ -2,21 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css';
 import App from './App';
-import Header from './Components/Header';
-import Navbar from './Components/Navbar';
-import Footer from './Components/Footer';
+// import Header from './Components/Header';
+// import Navbar from './Components/Navbar';
+// import Cards from './Components/Cards';
+// import Footer from './Components/Footer';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <div>
-    <Header />
-    <Navbar />
-    <App />
-    <Footer />
-  </div>
-);
+root.render(<App />);
+// root.render(
+//   <div className='container'>
+//     <Header />
+//     <Navbar />
+//     <Cards />  {/* add this component to display the cards */}
+//     <App />
+//     <Footer />
+//   </div>
+// );
 
 
 
