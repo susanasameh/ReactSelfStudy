@@ -1,0 +1,58 @@
+export const data = [
+  {
+    img: require("./Assets/images/0eae583c-9d12-4e01-8f37-8fb39fa749e2.webp"),
+    title: "The Great Gatsby",
+    description: "the great goto site for the great goto site",
+    rate: 1.98,
+    price: "2000",
+  },
+  {
+    img: require("./Assets/images/12e57c43-8e48-462d-97d7-9b196ecac948.webp"),
+    title: "The Great Gatsby2",
+    description: "the great goto site for the great goto site2",
+    rate: 2.65,
+    price: "2000",
+  },
+  {
+    img: require("./Assets/images/4a0742a4-608f-4e02-8c9b-62b74e6734ef.webp"),
+    title: "The Great Gatsby3",
+    description: "the great goto site for the great goto site3",
+    rate: 3.58,
+    price: "2000",
+  },
+  {
+    img: require("./Assets/images/4ad27d4b-3550-4d89-881d-4ca8c98b1f6e.webp"),
+    title: "The Great Gatsby4",
+    description: "the great goto site for the great goto site4",
+    rate: 4.1,
+    price: 2000,
+  },
+  {
+    img: require("./Assets/images/6d516e57-f180-41cd-a2b2-ff67147845af.webp"),
+    title: "The Great Gatsby5",
+    description: "the great goto site for the great goto site5",
+    rate: 5,
+    price: 2000,
+  },
+  {
+    img: require("./Assets/images/91db8fff-e030-4c69-89f0-42a53ef3fa95.webp"),
+    title: "The Great Gatsby6",
+    description: "the great goto site for the great goto site6",
+    rate: 4.5,
+    price: 2000,
+  },
+  {
+    img: require("./Assets/images/a4817d5a-17d1-448c-a92a-56f213d65c30.webp"),
+    title: "The Great Gatsby7",
+    description: "the great goto site for the great goto site7",
+    rate: 3.75,
+    price: 2000,
+  },
+  {
+    img: require("./Assets/images/b70cf84a-24b4-4649-a465-8665dc64b85c.webp"),
+    title: "The Great Gatsby8",
+    description: "the great goto site for the great goto site8",
+    rate: 2.96,
+    price: 2000,
+  },
+];
