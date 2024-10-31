@@ -1,7 +1,8 @@
 import React from 'react';
-import {useState} from "react";
+import {useState, useEffect } from "react";
 
 export default function App() {
+  //------------------------useState----------------------------------------
   const [susana, setSusana] = React.useState("hi");
   // console.log(susana);
   function Toggle() {
@@ -30,6 +31,18 @@ export default function App() {
   console.log(firstName);
   console.log(lastName);
   console.log(email);
+
+  //-------------------------useEffect---------------------------------------
+  //useEffect with fetch Api
+  //useEffect take 2 parameters (function , number of repeting useEffect)
+  useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then((res) => res.json())
+      // .then((data) => console.log(data.data));   //data.data to get the array data only
+      // .then((data) => console.log(data.data.memes)); //data.data.memes to get the all objects in the array
+      //using map()to get something from the objects of array
+      .then((data) => console.log(data.data.memes.map((item)=>item.name)));  //get only object's name
+  }, []);
   
 
   return (
