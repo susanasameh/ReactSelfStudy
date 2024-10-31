@@ -2,10 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css';
 import App from './App';
-// import Header from './Components/Header';
-// import Navbar from './Components/Navbar';
-// import Cards from './Components/Cards';
-// import Footer from './Components/Footer';
+import './all.min.css';
+
 
 
 
