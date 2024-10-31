@@ -1,5 +1,6 @@
 import React from 'react';
-import {useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import Name from "./Components/Name";
 
 export default function App() {
   //------------------------useState----------------------------------------
@@ -28,9 +29,9 @@ export default function App() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  console.log(firstName);
-  console.log(lastName);
-  console.log(email);
+  // console.log(firstName);
+  // console.log(lastName);
+  // console.log(email);
 
   //-------------------------useEffect---------------------------------------
   //useEffect with fetch Api
@@ -43,6 +44,16 @@ export default function App() {
       //using map()to get something from the objects of array
       .then((data) => console.log(data.data.memes.map((item)=>item.name)));  //get only object's name
   }, []);
+
+  //------------------useEffect,useState,props--------------------------------
+  const [data, setData] = useState([]);
+  const dataShow = data.map((item, index) => <Name name={item} key={index} />);
+  
+  useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+     .then((res) => res.json())
+     .then((data) => setData(data.data.memes.map((item) => item.name)));
+  })
   
 
   return (
@@ -112,6 +123,10 @@ export default function App() {
         />
         <button type="submit">Submit</button>
       </form>
+
+      <div>
+        {dataShow}
+      </div>
     </div>
   );
 }
