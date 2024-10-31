@@ -1,6 +1,7 @@
 import React from 'react';
+import {useState} from "react";
 
-export default function App() {  
+export default function App() {
   const [susana, setSusana] = React.useState("hi");
   // console.log(susana);
   function Toggle() {
@@ -8,9 +9,9 @@ export default function App() {
   }
   const [accept, setAccept] = React.useState("yes");
   function Accept() {
-    setAccept(choose => choose === "yes" ? "no" : "yes");
+    setAccept((choose) => (choose === "yes" ? "no" : "yes"));
   }
-  //use booleans values 
+  //use booleans values
   const [agree, setAgreet] = React.useState(true);
   function Agree() {
     setAgreet((agree) => !agree);
@@ -18,22 +19,29 @@ export default function App() {
   //change the style color of heart icon
   const [change, setChange] = React.useState(true);
   function Change() {
-    setChange((icon) =>!icon);
+    setChange((icon) => !icon);
   }
   //use arrow function
   const [arrowChange, setArrowChange] = React.useState(true);
+  //use useState with form inputs
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  console.log(firstName);
+  console.log(lastName);
+  console.log(email);
   
- 
-  return (
-    //the way to use another function(Toggle)
-    // <div style={{ textAlign: "center", fontSize: "15px" }} onClick={Toggle}>
-    //the way to use the same function(setSusana) and use arrow function
-    <div
-      style={{ textAlign: "center", fontSize: "15px" }}
-      onClick={() => setSusana("wooow")}
-    >
-      {susana}
 
+  return (
+    // the way to use another function(Toggle)
+    <div style={{ textAlign: "center", fontSize: "15px" }} onClick={Toggle}>
+      {/* the way to use the same function(setSusana) and use arrow function */}
+      <div
+        style={{ textAlign: "center", fontSize: "15px" }}
+        onClick={() => setSusana("wooow")}
+      >
+        {susana}
+      </div>
       <div style={{ textAlign: "center", fontSize: "15px" }} onClick={Accept}>
         {accept}
       </div>
@@ -57,10 +65,40 @@ export default function App() {
           style={{ color: arrowChange ? "" : "blue" }}
         ></i>
       </div>
+
+      <form action="">
+        <label htmlFor="fname">First Name </label>
+        <input
+          name="fname"
+          id="fname"
+          placeholder="First Name"
+          type="text"
+          required
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+        <label htmlFor="lname">Last Name </label>
+        <input
+          name="lname"
+          id="lname"
+          placeholder="Last Name"
+          type="text"
+          required
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        />
+        <label htmlFor="email">Email </label>
+        <input
+          name="email"
+          id="email"
+          placeholder="Email"
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
-
-
-  
-  
 }
