@@ -1,10 +1,13 @@
 
 import './App.css';
+import SignUp from './SignUp';
 
-function App() {
+export default function App() {
   return (
-  <div></div>
+    <div>
+      <SignUp />
+  </div>
   );
 }
 
-export default App;
+
