@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 export default function SignIn() {
@@ -6,13 +6,13 @@ export default function SignIn() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [emailError, setEmailError] = useState("");
-    const [accept, setAccept] = useState("false");
+    const [accept, setAccept] = useState(false);
 
     async function Submit(e) {
       let flag = true;
       e.preventDefault();
       setAccept(true);
-      if (email === "" || password.length < 8) {
+      if (email === "" || password === "" || password.length < 8) {
         flag = false;
       } else flag = true;
       try {
@@ -38,7 +38,7 @@ export default function SignIn() {
         alignItems: "center",
       }}
     >
-      <form action="" method="" onSubmit={SignIn} className="formStyle">
+      <form action="" method="" onSubmit={Submit} className="formStyle">
         <label htmlFor="email">Email : </label>
         <input
           type="email"
@@ -49,9 +49,9 @@ export default function SignIn() {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-        {accept && emailError === 422 &&
+        {accept && emailError === 422 && (
           <p className="errorMessage">Email already been taken</p>
-        }
+        )}
 
         <label htmlFor="password">Password : </label>
         <input
@@ -63,7 +63,17 @@ export default function SignIn() {
           onChange={(e) => setPassword(e.target.value)}
         />
         {/* if condition = true to display the error message */}
-        {password.length < 8 && accept && <p className="errorMessage"> password is invalid</p> }
+        {password.length < 8 && accept && (
+          <p className="errorMessage">password is invalid</p>
+        )}
+        {password === "" && accept && (
+          <p className="errorMessage">password is required</p>
+        )}
+        {email === "" && accept && (
+          <p className="errorMessage">email is required</p>
+        )}
+
+        <button type="submit">Sign in</button>
       </form>
     </div>
   );
