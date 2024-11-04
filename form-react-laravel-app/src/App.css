@@ -13,7 +13,7 @@ body{
 
 /* sign up form */
 
-#signUpForm{
+.formStyle{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +22,7 @@ body{
     box-shadow: 0px 2px 15px rgba(0,0,0,10%);
    
 }
-#signUpForm input{
+.formStyle input{
     padding: 10px;
     width: 100%;
     outline: none;
@@ -32,10 +32,10 @@ body{
     margin: 5px 0 10px 0;
     border-radius: 5px;
 }
-#signUpForm input:focus{
+.formStyle input:focus{
     border: 2px solid #86a8ff;
 }
-#signUpForm input::placeholder{
+.formStyle input::placeholder{
     color: hsla(222, 30%, 43%, 0.315);
 }
 .register{
@@ -44,7 +44,7 @@ body{
     align-items: center;
     margin-top: 20px;
 }
-.register button{
+ button{
     outline: none;
     border: none;
     background-color: #86a8ff;
@@ -68,4 +68,24 @@ body{
     font-size: 14px;
     margin-top: 0;
 
+}
+.navLinks{
+    outline: none;
+        border: none;
+        background-color: #86a8ff;
+        padding: 10px 20px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+        border: 2px solid white;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 20px;
+        text-decoration: none;
+}
+.navLinks:hover {
+    background-color: white;
+    border: 2px solid #86a8ff;
+    color: #86a8ff;
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from "axios";
 
 export default function SignUp() {
@@ -56,10 +56,7 @@ export default function SignUp() {
   
 
 
-    //--------------useEffect------------------------
-    useEffect(() => {
-        fetch('')
-    });
+  
 
 
 
@@ -73,7 +70,7 @@ export default function SignUp() {
         }}
       >
         {/* <div className="register" > */}
-        <form onSubmit={Submit} id="signUpForm">
+        <form onSubmit={Submit} id="signUpForm" className="formStyle">
           <label htmlFor="name">Name : </label>
           <input
             type="text"
