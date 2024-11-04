@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from "axios";
 
+
 export default function SignUp() {
     //--------------using useState-----------------
     const [name, setName] = useState("");
@@ -36,6 +37,7 @@ export default function SignUp() {
       flag = false;
     } else flag = true;
     try {
+      // let res;
       if (flag) {
         let res = await axios.post("http://127.0.0.1:8000/api/register", {
           name: name,
@@ -43,7 +45,14 @@ export default function SignUp() {
           password: password,
           password_confirmation: passwordR,
         })
-        .then((t) => console.log(t.data));
+        // .then((t) => console.log(t.data));
+        //لو الاستجابة راجعة ب 200 يعنى العملية صحيحة
+        if (res.status === 200) {
+          //storing email in local storage
+          window.localStorage.setItem("email", email);
+          //return to home after sign up
+        window.location.pathname = "/login";
+      } 
       }
     } catch (err) {
       //using setEmailError

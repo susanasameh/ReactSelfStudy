@@ -21,6 +21,11 @@ export default function SignIn() {
             email: email,
             password: password,
           });
+
+          if (res.status === 200) {
+            window.localStorage.setItem("email", email);
+            window.location.pathname = "/home";
+          }
           console.log(res.data);
         }
       } catch (err) {
