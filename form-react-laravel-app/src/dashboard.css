@@ -1,0 +1,47 @@
+/* global css */
+.content-flex{
+    display: flex;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+}
+
+/* TopBar */
+.top-bar{
+box-shadow: 1px 1px 10px 1px #cbc9c9;
+}
+
+/* sidebar  */
+.side-bar{
+padding: 20px;
+border-right: 1px solid rgba(210, 210, 210, 0.64);
+width:20%;
+height: 100vh;
+}
+.side-bar .item-links{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+tr:nth-child(even){
+    background-color: #f1f7f8;
+}
+
+th, td{
+    border : 1px solid #a8c8cf;
+    padding: 0.75rem;
+    text-align: center;
+}
+th{
+    background-color: #74afba;
+    color: white;
+}
+td{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

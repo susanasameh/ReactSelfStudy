@@ -1,4 +1,5 @@
 import { useState } from "react";
+//we need to import axios to post data to the database
 import axios from "axios";
 import Header from "./Components/Header";
 

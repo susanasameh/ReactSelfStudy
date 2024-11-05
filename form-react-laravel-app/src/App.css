@@ -89,3 +89,13 @@ body{
     border: 2px solid #86a8ff;
     color: #86a8ff;
 }
+
+/* dashboard bars */
+
+.d-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
