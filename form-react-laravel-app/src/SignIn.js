@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import Header from "./Components/Header";
 
 export default function SignIn() {
   //useState
@@ -24,7 +25,7 @@ export default function SignIn() {
 
           if (res.status === 200) {
             window.localStorage.setItem("email", email);
-            window.location.pathname = "/home";
+            window.location.pathname = "/";
           }
           console.log(res.data);
         }
@@ -35,51 +36,55 @@ export default function SignIn() {
     
 
   return (
-    <div
-      style={{
-        height: "80vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <form action="" method="" onSubmit={Submit} className="formStyle">
-        <label htmlFor="email">Email : </label>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          name="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        {accept && emailError === 422 && (
-          <p className="errorMessage">Email already been taken</p>
-        )}
+    <>
+      <Header />
 
-        <label htmlFor="password">Password : </label>
-        <input
-          type="password"
-          placeholder="Enter your password"
-          name="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        {/* if condition = true to display the error message */}
-        {password.length < 8 && accept && (
-          <p className="errorMessage">password is invalid</p>
-        )}
-        {password === "" && accept && (
-          <p className="errorMessage">password is required</p>
-        )}
-        {email === "" && accept && (
-          <p className="errorMessage">email is required</p>
-        )}
+      <div
+        style={{
+          height: "80vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <form action="" method="" onSubmit={Submit} className="formStyle">
+          <label htmlFor="email">Email : </label>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            name="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          {accept && emailError === 422 && (
+            <p className="errorMessage">Email already been taken</p>
+          )}
 
-        <button type="submit">Sign in</button>
-      </form>
-    </div>
+          <label htmlFor="password">Password : </label>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            name="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {/* if condition = true to display the error message */}
+          {password.length < 8 && accept && (
+            <p className="errorMessage">password is invalid</p>
+          )}
+          {password === "" && accept && (
+            <p className="errorMessage">password is required</p>
+          )}
+          {email === "" && accept && (
+            <p className="errorMessage">email is required</p>
+          )}
+
+          <button type="submit">Sign in</button>
+        </form>
+      </div>
+    </>
   );
 }

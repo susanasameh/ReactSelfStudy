@@ -9,7 +9,7 @@ export default function Header() {
   function handleLogOut() {
     window.localStorage.removeItem("email");
     // redirect to login page
-    window.location.pathname = "/home";
+    window.location.pathname = "/";
   }
 
 
@@ -27,14 +27,14 @@ export default function Header() {
             // cursor : "pointer"
           }}
         >
-          <Link to="/home" className="navLinks">
+          <Link to="/" className="navLinks">
             Home
           </Link>
           {/* get the email (key) from the localstorage and compare it with the db email  */}
           { ! window.localStorage.getItem("email") ? (
             // <> it is a <div>
             <>
-              <Link to="./login" className="navLinks">
+              <Link to="/login" className="navLinks">
                 Sign in
               </Link>
               <Link to="/register" className="navLinks">

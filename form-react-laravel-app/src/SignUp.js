@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from "axios";
+import Header from './Components/Header';
 
 
 export default function SignUp() {
@@ -50,7 +51,7 @@ export default function SignUp() {
         if (res.status === 200) {
           //storing email in local storage
           window.localStorage.setItem("email", email);
-          //return to home after sign up
+          //return to sign in page after sign up
         window.location.pathname = "/login";
       } 
       }
@@ -69,7 +70,10 @@ export default function SignUp() {
 
 
 
-    return (
+  return (
+    <>
+      <Header />
+
       <div
         style={{
           height: "80vh",
@@ -103,7 +107,9 @@ export default function SignUp() {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-          {accept && emailError === 422 && <p className="errorMessage">Email already been taken</p>}
+          {accept && emailError === 422 && (
+            <p className="errorMessage">Email already been taken</p>
+          )}
 
           <label htmlFor="password">Password : </label>
           <input
@@ -144,5 +150,6 @@ export default function SignUp() {
         </form>
         {/* </div> */}
       </div>
-    );
+    </>
+  );
 }
