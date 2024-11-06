@@ -1,6 +1,7 @@
 
 import './App.css';
 import './dashboard.css';
+import './all.min.css'
 import Header from './Components/Header';
 import SignUp from './SignUp';
 import SignIn from './SignIn';
