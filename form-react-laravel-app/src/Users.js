@@ -9,7 +9,7 @@ export default function Users() {
   //useState && empaty [] is nessesary to use map
   const [users, setUsers] = useState([]);
 
-  //to set when the useEffect is set and fetch data in table
+  //to set when the useEffect is set and fetch data in table to avoid the error of many requests
     const [runUseEffect, setRun] = useState(0);
 
   //to get data from database we will use useEffect
@@ -64,6 +64,7 @@ export default function Users() {
       <td>{user.name}</td>
       <td>{user.email}</td>
       <td>
+        {/* handle update fuunction link */}
         <Link to={`/dashboard/users/${user.id}`}>
           <i
             style={{
