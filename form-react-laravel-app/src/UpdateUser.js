@@ -1,68 +1,80 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+//[2]-------------------import--------------------
+//use react hooks(useState& useEffect)
+import { useState, useEffect } from 'react';
+//use Axios library for http requests
+import axios from 'axios';
+
+//[1]----------------UpdatedUser function--------------------------------
 export default function UpdateUser() {
-  //--------------using useState-----------------
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordR, setPasswordR] = useState("");
-  const [accept, setAccept] = useState(false);
-  //i don't need this useState because now we update the user so we don't have to check if it in db or not
-    // const [emailError, setEmailError] = useState("");
+    //[3]-------------useState--------------------------------
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [passwordR, setPasswordR] = useState("");
+    //to check all the inputs is valid or not
+    const [accept, setAccept] = useState(false);
 
-    //get the id of the user from the url
-    //using [0] because we need the last part of the url as a number not array 
-    const id = window.location.pathname.split('/').splice(-1)[0];
-
+    //[4]get the id of the user from the url
+    //using [0] because we need the last part of the url as a number not array
+    //(URL) هذه السطر يستخرج  معرف المستخدم  من عنوان الرابط 
+    // عن طريق تقسيم الرابط إلى أجزاء واستخدام الجزء الأخير.هذا المعرف يُستخدم لجلب وتحديث بيانات المستخدم المحدد.
+    const id = window.location.pathname.split("/").splice(-1)[0];
+    
+    //[5]-------------useEffect--------------------------------
     //useEffect to get data from the database and fetch it in the form to update the user
     useEffect(() => {
-        // fetch(get) data from your API
+        //fetch data from the database using Axios library
         fetch(`http://127.0.0.1:8000/api/user/showbyid/${id}`)
-            .then(response => response.json())
-            .then(data => {
+            .then((res) => res.json())
+            .then((data) => {
                 console.log(data);
                 //fetch date in form
                 //using setName because we need the name of the user we save it in the above useState
                 //when we use console.log(data) we get an array with one object so we use [0] as index
                 setName(data[0].name);
-              setEmail(data[0].email);
-              // setPassword(data[0].password);
-              // setPasswordR(data[0].passwordR);
-              
-              
-            
+                setEmail(data[0].email);
             });
-    }, [id]);
-    
 
+    }, [id]);
+
+
+    //[6]-------------handlle submite function--------------------------------------------------------
     async function Submit(e) {
-      let flag = true;
-      e.preventDefault();
-      setAccept(true);
-      if (name === "" || password.length < 8 || passwordR !== password) {
-        flag = false;
-      } else flag = true;
-      try {
-        // let res;
-        if (flag) {
-          let res = await axios.post(`http://127.0.0.1:8000/api/user/update/${id}`, {
-            name: name,
-            email: email,
-            password: password,
-            password_confirmation: passwordR,
-          });
-          if (res.status === 200) {
-            window.localStorage.setItem("email", email);
-            window.location.pathname = "/dashboard/users";
-          }
+        //to check all the data of the form is valid
+        let flag = true;
+        //to prevent form from submitting 
+        e.preventDefault();
+        //to check all inputs are valid
+        setAccept(true);
+        //condition = true to change the value of flag
+        if (name === "" || password.length < 8 || passwordR !== password) {
+            flag = false;
+        } else flag = true;
+        try {
+            if (flag) {
+                //send data to the server to update the user by using axios and post method
+                let res = await axios.post(`http://127.0.0.1:8000/api/user/update/${id}`, {
+                    name: name,
+                    email: email,
+                    password: password,
+                    password_confirmation: passwordR
+                });
+                //if the status of the response is 200
+                if (res.status === 200) {
+                    //storing email in local storage
+                    window.localStorage.setItem("email", email);
+                    //redirect to users table   
+                    window.location.pathname = "/dashboard/users";
+                }
+            }
+        } catch (err) {
+            console.log(err.response.data);
         }
-      } catch (err) {
-        console.log(err.response.data);
-        
-      }
+
     }
-  return (
-    <div
+    //[7]-------------return--------------------------------
+    return (
+         <div
       style={{
         height: "80vh",
         display: "flex",
@@ -131,5 +143,10 @@ export default function UpdateUser() {
       </form>
       {/* </div> */}
     </div>
-  );
-}
+    )
+        } 
+ 
+
+ 
+
+
