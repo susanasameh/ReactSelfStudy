@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import './forms.css';
 
 
 
@@ -28,9 +29,23 @@ export default function Forms(props) {
   // const [flag, setFlag] = useState(true);
 
   //handle email error
-    const [emailError, setEmailError] = useState("");
-    
+  const [emailError, setEmailError] = useState("");
+  
+  //handle register style form
+  const registerStyle = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  };
 
+  const formStyle = {
+    boxShadow: "0px 2px 15px rgba(0, 0, 0, 10%)",
+    width: "40%",
+  }  
+
+  const buttonStyle = {
+    width: "100%",
+  };
     //------------useEffect-----------------------
     //if input name&email change the use effect will run
     useEffect(() => {
@@ -82,15 +97,16 @@ export default function Forms(props) {
 
   return (
     <div
-      style={{
-        height: "80vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      // style={{
+      //   height: "80vh",
+      // display: "flex",
+      // justifyContent: "center",
+      // alignItems: "center",
+      // }}
+      style={props.registerStyle && registerStyle}
     >
       {/* <div className="register" > */}
-      <form onSubmit={Submit} id="signUpForm" className="formStyle">
+      <form onSubmit={Submit} id="signUpForm" className="formStyle" style={props.formStyle && formStyle}>
         <label htmlFor="name">Name : </label>
         <input
           type="text"
@@ -146,7 +162,7 @@ export default function Forms(props) {
         )}
 
         <div style={{ textAlign: "center" }} className="register">
-          <button type="submit" id="signUpButton">
+          <button type="submit" id="signUpButton" style={props.buttonStyle && buttonStyle}>
             {props.button}
           </button>
         </div>

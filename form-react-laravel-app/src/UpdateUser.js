@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 //use Axios library for http requests
 
-import Forms from "./Components/Forms";
+import Forms from "./Components/Forms/Forms";
 
 //[1]----------------UpdatedUser function--------------------------------
 export default function UpdateUser() {
@@ -35,15 +35,19 @@ export default function UpdateUser() {
 
   //[6]-------------handlle submite function--------------------------------------------------------
   //[7]-------------return--------------------------------
-    return (
-      //add props names to change properties of the component
-    <Forms
-      button="Update"
-      name={name}
-      email={email}
-      endPoint={`user/update/${id}`}
-      navigate="dashboard/users"
-      hasLocalStorage={false}
-    />
+  return (
+    <>
+      <h1>Update User</h1>
+      {/* add props names to change properties of the component */}
+      <Forms
+        button="Update"
+        name={name}
+        email={email}
+        endPoint={`user/update/${id}`}
+        navigate="dashboard/users"
+        hasLocalStorage={false}
+        buttonStyle = {true}
+      />
+    </>
   );
 }

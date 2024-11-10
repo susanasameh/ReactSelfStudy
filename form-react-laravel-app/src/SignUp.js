@@ -1,6 +1,6 @@
 
 import Header from './Components/Header';
-import Forms from './Components/Forms';
+import Forms from './Components/Forms/Forms';
 
 
 export default function SignUp() {
@@ -13,6 +13,9 @@ export default function SignUp() {
         endPoint="register"
         navigate="login"
         hasLocalStorage={true}
+        registerStyle={true}
+        formStyle={true}
+       
       />
     </>
   );
