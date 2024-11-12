@@ -11,6 +11,7 @@ import Users from './Users';
 //imprt Routes and Route 
 import { Routes, Route } from'react-router-dom';
 import UpdateUser from './UpdateUser';
+import CreateUser from './CreateUser';
 
 
 export default function App() {
@@ -24,10 +25,12 @@ export default function App() {
         <Route path="/dashboard" element={<Dashboard />}>
           {/* put users only and <Outlet/> in the dashboard display the correct url (./dashboard/users)*/}
           <Route path="users" element={<Users />} />
-            
-            {/* add users router */}
-            <Route path="users/:id" element={<UpdateUser />} />
-          
+
+          {/* add users router */}
+
+          <Route path="user/create" element={<CreateUser />} />
+
+          <Route path="users/:id" element={<UpdateUser />} />
         </Route>
 
         {/* <SignUp /> */}

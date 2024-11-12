@@ -19,8 +19,31 @@ height: 100vh;
 }
 .side-bar .item-links{
     color: black;
-    text-decoration: none;
-    font-size: 20px;
+        text-decoration: none;
+        font-size: 22px;
+        display: block;
+        padding: 7px;        
+        margin-bottom: 10px;
+        font-family: "Segoe UI",
+            Tahoma,
+            Geneva,
+            Verdana,
+            sans-serif;
+            transition: 0.2s;
+}
+.side-bar .item-links:hover{
+box-shadow: inset #60b5c580 0px -12px 10px 0px;
+border-radius: 10px;
+}
+.active{
+box-shadow: inset #60b5c580 0px -12px 10px 0px;
+    border-radius: 10px;
+}
+
+.sideBarIcon{
+    font-size: 25px;
+    margin-right: 10px;
+    color :#1E3050;
 }
 table{
     border-collapse: collapse;
