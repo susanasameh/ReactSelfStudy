@@ -1,0 +1,37 @@
+.info-wrapper{
+    width: 50%;
+    height: 100%;
+    padding: 10px 20px;
+    font-family: 'Mystery Quest';
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    font-size: smaller;
+   
+}
+
+
+.infoWrapper{
+    
+    font-size: 40px;
+    text-align: left;
+}
+
+.info-wrapper p{
+    font-size: 150%;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    /* -webkit-line-clamp: 7; */
+    -webkit-box-orient: vertical;
+}
+.info-wrapper h3{
+    font-size: 25px;    
+    text-align: right;
+}
+.heart-imoji{
+    font-size: 50px;
+    color: red;
+    padding-right: 10%;
+}
