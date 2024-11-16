@@ -1,5 +1,7 @@
 import './ProductInfoWrapper.css'
 import '../../all.min.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/fontawesome-free-solid'
 
 export default function ProductInfoWrapper() {
     return (
@@ -13,7 +15,7 @@ export default function ProductInfoWrapper() {
                 <label>$50</label>
                 <label><del>$100</del></label>
             </div>
-            <button className="btn-cart"><i style={{marginRight:"10px"}} className="fa-solid fa-cart-shopping"></i>Add to Cart</button>
+            <button className="btn-cart"><FontAwesomeIcon icon={faShoppingCart } className='font-icon' />Add to Cart</button>
         </div>
     )
 }
