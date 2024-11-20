@@ -1,0 +1,1 @@
+in class components, we use render() and put return in it 
