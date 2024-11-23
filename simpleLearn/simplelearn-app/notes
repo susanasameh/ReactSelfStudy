@@ -1,0 +1,5 @@
+Higher order components
+
+is a function takes a component and returns a new component
+it facilitates reusing the component logic
+const NewComponent = higherOrderComponent(originalComponent)
