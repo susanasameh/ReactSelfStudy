@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import UpdatedComp from "./HigherOrder.js";
+import UpdatedComp from './HigherOrder.js';
 
 export class Click extends Component {
 

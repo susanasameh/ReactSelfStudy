@@ -15,15 +15,16 @@ export class Count extends Component {
 
 
     render() {
-        const { count } = this.state;
+      const { count } = this.state;
+      const { title } = this.props;
         return (
           <div>
             <button onMouseEnter={this.ChangeCount}>
-              {this.props.title} Hover to change {count}
+              {title} Hover to change {count}
             </button>
           </div>
         );
     }
 }
 
-export default UpdatedComp(Count);
+export default UpdatedComp( Count );
